@@ -22,9 +22,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	if (size != 0 && nmemb > SIZE_MAX / size)
 		return (NULL);
 	total = nmemb * size;
-	if (total == 0)
-		total = 1;
-	memory = (unsigned char *)malloc(total);
+	memory = malloc(sizeof(unsigned char) * total);
 	if (memory == NULL)
 		return (NULL);
 	i = 0;
