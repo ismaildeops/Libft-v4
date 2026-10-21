@@ -19,10 +19,26 @@ void *ft_memmove(void *dest, const void *src, size_t n)
         return (dest);
     if (dest == NULL || src == NULL)
 		return (NULL);
-    while (n > 0)
+    
+    if(d > s)
     {
-        n--;
-        d[n] = s[n];
+        while (n > 0)
+        {
+            n--;
+            d[n] = s[n];
+        }
+    }
+    else
+    {
+        size_t i = 0;
+        while (i < n)
+        {
+            d[i] = s[i];
+            i++;
+        }
     }
     return (dest);
 }
+
+
+// d > s back
